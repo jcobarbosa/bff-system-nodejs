@@ -28,11 +28,13 @@ const authenticateJWT = (req, res, next) => {
 // Function to forward requests to the main API
 const forwardRequest = async (req, res) => {
   try {
+    const { 'content-length': contentLength, ...headers } = req.headers;
+
     const response = await axios({
       method: req.method,
       url: `${MAIN_API_URL}${req.originalUrl}`,
       headers: {
-        ...req.headers,
+        ...headers,
         Authorization: `Bearer ${req.user.token}`, // Forward the JWT token
       },
       data: req.body,
@@ -47,11 +49,13 @@ const forwardRequest = async (req, res) => {
 // Function to forward requests to the main API
 const forwardPublicRequest = async (req, res) => {
   try {
+    const { 'content-length': contentLength, ...headers } = req.headers;
+
     const response = await axios({
       method: req.method,
       url: `${MAIN_API_URL}${req.originalUrl}`,
       headers: {
-        ...req.headers
+        ...headers,
       },
       data: req.body,
       timeout: 5000, // Increase timeout to 5 seconds
