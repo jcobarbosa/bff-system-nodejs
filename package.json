@@ -1,0 +1,25 @@
+{
+  "name": "bff-system",
+  "version": "1.0.0",
+  "description": "BFF for Base system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcobarbosa/bff-system-nodejs.git"
+  },
+  "author": "jcobarbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcobarbosa/bff-system-nodejs/issues"
+  },
+  "homepage": "https://github.com/jcobarbosa/bff-system-nodejs#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
